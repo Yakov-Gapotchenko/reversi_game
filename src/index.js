@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import PlayingField from './components/playing-field';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const board123 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+
+
+
+const board = new Array(new Array(8));
+
+
+
+
+
+
+ReactDOM.render(<PlayingField>{board}</PlayingField>,document.getElementById('root'));
+
+
+
+
+
+

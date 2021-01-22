@@ -16,10 +16,10 @@ const board = new Array(new Array(8));
 
 
 
+const onFieldClick = (id) => {console.log(id);}
 
 
-
-ReactDOM.render(<PlayingField>{board}</PlayingField>,document.getElementById('root'));
+ReactDOM.render(<PlayingField onClick={onFieldClick}></PlayingField>,document.getElementById('root'));
 
 
 

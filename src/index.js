@@ -11,15 +11,23 @@ const board123 = [
 ];
 
 
+let board = new Array(8);
+for (let i=0;i<8;i++)
+    board[i] = new Array(8);
 
-const board = new Array(new Array(8));
+for (let i=0;i<8;i++)
+    for (let j=0;j<8;j++)
+    {board[i][j] = {id : String(10*i + j)};}
 
 
 
-const onFieldClick = (id) => {console.log(id);}
+console.log(board)
 
 
-ReactDOM.render(<PlayingField onClick={onFieldClick}></PlayingField>,document.getElementById('root'));
+const onClickField = (id) => {return console.log(id);}
+
+
+ReactDOM.render(<PlayingField onClickField={onClickField}>{board}</PlayingField>,document.getElementById('root'));
 
 
 

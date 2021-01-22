@@ -1,6 +1,6 @@
 .playing-field {
-    width: 600px;
-    height: 600px;
+    width: 448px;
+    height: 448px;
     alignment: center;
     background-color: darkcyan;
     position: absolute;
@@ -9,4 +9,7 @@
     bottom: 0;
     left: 0;
     margin: auto;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap:wrap;
 }

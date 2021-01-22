@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Row from "../row";
+
 import './playing-field.css';
+import GameCell from "../game-cell";
 
 export default class PlayingField extends React.Component {
     render() {
-        const rows = this.props.children;
-        const res = rows.map((row)=>{
-            return <Row>{row}</Row>;
-        })
+        const {onClickField} = this.props;
+        const cells = this.props.children;
+
+        //console.log(cells.flat());
+        const res = cells.flat().map((cell)=>{
+            return (<GameCell key={cell.id} onClickField={() => onClickField(cell.id)}>{cell}</GameCell>);
+        });
 
         return <div className='playing-field'>{res}</div>;
     }

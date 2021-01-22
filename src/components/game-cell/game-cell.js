@@ -1,10 +1,11 @@
 import React from 'react';
-
+import './game-cell.css';
 
 export default class GameCell extends React.Component {
 
     render(){
-        return <div className='game-cell'></div>;
+        const {onClickField,key} = this.props;
+        return <div className='game-cell' onClick={onClickField} key={key}></div>;
 
 
     }

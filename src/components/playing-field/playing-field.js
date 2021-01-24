@@ -11,7 +11,7 @@ export default class PlayingField extends React.Component {
 
         //console.log(cells.flat());
         const res = cells.flat().map((cell)=>{
-            return (<GameCell key={cell.id} onClickField={() => onClickField(cell.id)}>{cell}</GameCell>);
+            return (<GameCell key={cell.id} onClickField={onClickField}>{cell}</GameCell>);
         });
 
         return <div className='playing-field'>{res}</div>;

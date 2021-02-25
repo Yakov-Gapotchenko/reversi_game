@@ -53,7 +53,6 @@ export default class App extends React.Component{
     state = {};
 
     
-
     
 
     constructor(props) {
@@ -67,6 +66,12 @@ export default class App extends React.Component{
             for (let j = 0; j < 8; j++) {
                 this.state.board[i][j] = {id: String(10 * i + j), status: 'empty'};
             }
+            this.state.board[3][3].status='white';
+            this.state.board[3][4].status='black';
+            this.state.board[4][3].status='black';
+            this.state.board[4][4].status='white';
+
+
         console.log(this.state.board)
     }
 

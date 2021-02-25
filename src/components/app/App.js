@@ -70,6 +70,10 @@ export default class App extends React.Component{
             this.state.board[3][4].status='black';
             this.state.board[4][3].status='black';
             this.state.board[4][4].status='white';
+            this.state.board[3][3].score=-1;
+            this.state.board[3][4].score=-1;
+            this.state.board[4][3].score=-1;
+            this.state.board[4][4].score=-1;
 
 
         console.log(this.state.board)
@@ -86,12 +90,20 @@ export default class App extends React.Component{
                 console.log(idx1,'       ',idx2);
                 const oldItem = state.board[idx1][idx2];
                 let status;
+
+                /*    REPLACE WITH LOGIC BLOCK
+                
+
+
                 if (oldItem.status==='empty')
                     status = 'black';
                 else if (oldItem.status==='black')
                     status = 'white';
                 else
                     status = 'black';
+                
+
+                const status = this.board[i][j].status;
 
 
 
@@ -108,7 +120,19 @@ export default class App extends React.Component{
                             newBoard[i][j] = state.board[i][j];
                     }
 
-                console.log(newBoard);
+                    */
+
+                   const status = this.board[i][j].status;
+                   for (let i = 0; i < 8; i++)
+                   for (let j = 0; j < 8; j++) {
+                       if(status)
+                        newBoard[i][j] = {...oldItem, score: getResInAllDir(this.state.board, "black", i, j)};
+                   }
+
+                
+
+
+                //console.log(newBoard);
                 return {board: newBoard};
 
             });
